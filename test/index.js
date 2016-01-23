@@ -14,8 +14,8 @@ describe('serve(root)', function(){
         app.use(serve('.'));
 
         request(app.listen())
-        .get('/package.json')
-        .expect(200, done);
+          .get('/package.json')
+          .expect(200, done);
       })
     })
 
@@ -26,8 +26,8 @@ describe('serve(root)', function(){
         app.use(serve('test/fixtures'));
 
         request(app.listen())
-        .get('/something')
-        .expect(404, done);
+          .get('/something')
+          .expect(404, done);
       })
     })
 
@@ -43,9 +43,9 @@ describe('serve(root)', function(){
         });
 
         request(app.listen())
-        .get('/hello.txt')
-        .expect(200)
-        .expect('world', done);
+          .get('/hello.txt')
+          .expect(200)
+          .expect('world', done);
       })
     })
 
@@ -56,9 +56,9 @@ describe('serve(root)', function(){
         app.use(serve('test/fixtures'));
 
         request(app.listen())
-        .get('/hello.txt')
-        .expect(200)
-        .expect('world', done);
+          .get('/hello.txt')
+          .expect(200)
+          .expect('world', done);
       })
     })
 
@@ -70,10 +70,10 @@ describe('serve(root)', function(){
           app.use(serve('test/fixtures', { index: 'index.txt' }));
 
           request(app.listen())
-          .get('/')
-          .expect(200)
-          .expect('Content-Type', 'text/plain; charset=utf-8')
-          .expect('text index', done);
+            .get('/')
+            .expect(200)
+            .expect('Content-Type', 'text/plain; charset=utf-8')
+            .expect('text index', done);
         })
       })
 
@@ -84,10 +84,10 @@ describe('serve(root)', function(){
           app.use(serve('test/fixtures'));
 
           request(app.listen())
-          .get('/world/')
-          .expect(200)
-          .expect('Content-Type', 'text/html; charset=utf-8')
-          .expect('html index', done);
+            .get('/world/')
+            .expect(200)
+            .expect('Content-Type', 'text/html; charset=utf-8')
+            .expect('html index', done);
         })
       })
 
@@ -98,8 +98,8 @@ describe('serve(root)', function(){
           app.use(serve('test/fixtures', { index: false }));
 
           request(app.listen())
-          .get('/world/')
-          .expect(404, done);
+            .get('/world/')
+            .expect(404, done);
         })
       })
     })
@@ -111,8 +111,8 @@ describe('serve(root)', function(){
         app.use(serve('test/fixtures'));
 
         request(app.listen())
-        .post('/hello.txt')
-        .expect(404, done);
+          .post('/hello.txt')
+          .expect(404, done);
       })
     })
   })
@@ -132,9 +132,9 @@ describe('serve(root)', function(){
         });
 
         request(app.listen())
-        .get('/hello.txt')
-        .expect(200)
-        .expect('hey', done);
+          .get('/hello.txt')
+          .expect(200)
+          .expect('hey', done);
       })
     })
 
@@ -147,9 +147,9 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/hello.txt')
-        .expect(200)
-        .expect('world', done);
+          .get('/hello.txt')
+          .expect(200)
+          .expect('world', done);
       })
     })
 
@@ -164,10 +164,10 @@ describe('serve(root)', function(){
           }));
 
           request(app.listen())
-          .get('/')
-          .expect(200)
-          .expect('Content-Type', 'text/plain; charset=utf-8')
-          .expect('text index', done);
+            .get('/')
+            .expect(200)
+            .expect('Content-Type', 'text/plain; charset=utf-8')
+            .expect('text index', done);
         })
       })
 
@@ -176,14 +176,14 @@ describe('serve(root)', function(){
           const app = koa();
 
           app.use(serve('test/fixtures', {
-          defer: true
-        }));
+            defer: true
+          }));
 
           request(app.listen())
-          .get('/world/')
-          .expect(200)
-          .expect('Content-Type', 'text/html; charset=utf-8')
-          .expect('html index', done);
+            .get('/world/')
+            .expect(200)
+            .expect('Content-Type', 'text/html; charset=utf-8')
+            .expect('html index', done);
         })
       })
     })
@@ -224,8 +224,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/something')
-        .expect(404, done);
+          .get('/something')
+          .expect(404, done);
       })
     })
 
@@ -242,8 +242,8 @@ describe('serve(root)', function(){
         })
 
         request(app.listen())
-        .get('/something%%%/')
-        .expect(204, done);
+          .get('/something%%%/')
+          .expect(204, done);
       })
 
       it('when body=""', function(done){
@@ -258,8 +258,8 @@ describe('serve(root)', function(){
         })
 
         request(app.listen())
-        .get('/something%%%/')
-        .expect(200, done);
+          .get('/something%%%/')
+          .expect(200, done);
       })
     })
 
@@ -272,8 +272,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .post('/hello.txt')
-        .expect(404, done);
+          .post('/hello.txt')
+          .expect(404, done);
       })
     })
   })
@@ -289,8 +289,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/world')
-        .expect(404, done);
+          .get('/world')
+          .expect(404, done);
       })
 
       it('should 200', function(done){
@@ -302,8 +302,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/world/')
-        .expect(200, done);
+          .get('/world/')
+          .expect(200, done);
       })
     })
 
@@ -317,8 +317,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/world')
-        .expect(200, done);
+          .get('/world')
+          .expect(200, done);
       })
 
       it('should 200', function(done){
@@ -330,8 +330,8 @@ describe('serve(root)', function(){
         }));
 
         request(app.listen())
-        .get('/world/')
-        .expect(200, done);
+          .get('/world/')
+          .expect(200, done);
       })
     })
   })

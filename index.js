@@ -43,7 +43,7 @@ function serve (root, opts) {
     return function *serve (next) {
       if (this.method != 'HEAD' && this.method != 'GET') return;
       var pathUrl = this.path
-      if (url === pathUrl) {
+      if (url.replace(/^\//, "").replace(/\/$/, "") === pathUrl.replace(/^\//, "").replace(/\/$/, "")) {
         yield send(this, "/", opts);
       } else if (pathUrl.substr(0, url.length) === url) {
         var sub = pathUrl.replace(url, "")
@@ -62,13 +62,11 @@ function serve (root, opts) {
     if (this.body != null || this.status != 404) return;
 
     var pathUrl = this.path
-    if (url === pathUrl) {
+    if (url.replace(/^\//, "").replace(/\/$/, "") === pathUrl.replace(/^\//, "").replace(/\/$/, "")) {
       yield send(this, "/", opts);
     } else if (pathUrl.substr(0, url.length) === url) {
       var sub = pathUrl.replace(url, "")
       yield send(this, sub, opts)
-    } else {
-      yield* next
     }
   }
 }

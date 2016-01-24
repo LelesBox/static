@@ -33,6 +33,7 @@ app.use(require('koa-static')(root, opts));
  - `index` Default file name, defaults to 'index.html'
  - `defer` If true, serves after `yield next`, allowing any downstream middleware to respond first.
  - `gzip`  Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.
+ - `prefix` prefix the url,default /
 
 ## Example
 
@@ -46,6 +47,8 @@ app.use(serve('.'));
 
 // $ GET /hello.txt
 app.use(serve('test/fixtures'));
+
+app.use(serve('test/fixtures',{prefix:'/build/'}));
 
 // or use absolute paths
 app.use(serve(__dirname + '/test/fixtures'));

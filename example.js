@@ -8,12 +8,16 @@ const app = koa();
 // $ GET /package.json
 // $ GET /
 
-var url = '/build/build'
+//app.use(serve('test'));
+//app.use(serve(__dirname + '/asset'));
+var url = '/build'
 app.use(serve('test/fixtures', {
-  url: url,
+  prefix: url,
   //format:false  
-  defer: true
+  //defer: true
 }));
+app.use(serve(__dirname + '/asset'));
+
 
 app.use(function *(next) {
   yield next;

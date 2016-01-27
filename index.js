@@ -33,7 +33,7 @@ function serve (root, opts) {
   debug('static "%s" %j', root, opts);
   opts.root = resolve(root);
   if (opts.index !== false) opts.index = opts.index || 'index.html';
-  var url = opts.url || "/"
+  var url = opts.prefix || opts.url || "/"
   //prefix url
   if (url.substr(0, 1) !== "/")
     url = "/" + url
@@ -46,6 +46,8 @@ function serve (root, opts) {
       if (url.replace(/^\//, "").replace(/\/$/, "") === pathUrl.replace(/^\//, "").replace(/\/$/, "")) {
         yield send(this, "/", opts);
       } else if (pathUrl.substr(0, url.length) === url) {
+        console.log(pathUrl)
+        console.log("url:" + url)
         var sub = pathUrl.replace(url, "")
         yield send(this, sub, opts)
       } else {

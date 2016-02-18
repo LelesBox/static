@@ -1,5 +1,7 @@
 # koa-static
 
+基于koa-static,添加prefix和suffix选项,为链接添加前缀后缀
+
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
@@ -34,6 +36,7 @@ app.use(require('koa-static')(root, opts));
  - `defer` If true, serves after `yield next`, allowing any downstream middleware to respond first.
  - `gzip`  Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.
  - `prefix` prefix the url,default /
+ -  `suffix` suffix the url
 
 ## Example
 

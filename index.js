@@ -46,8 +46,6 @@ function serve(root, opts) {
             if (url.replace(/^\//, "").replace(/\/$/, "") === pathUrl.replace(/^\//, "").replace(/\/$/, "")) {
                 yield send(this, "/", opts);
             } else if (pathUrl.substr(0, url.length) === url) {
-                console.log(pathUrl)
-                console.log("url:" + url)
                 var sub = pathUrl.replace(url, "")
                 //如果有后缀 则添加后缀
                 yield send(this, sub + (opts.suffix || ""), opts)

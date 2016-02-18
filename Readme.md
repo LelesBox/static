@@ -7,7 +7,7 @@ Koa static file serving middleware, wrapper for [`koa-send`](https://github.com/
 ## Installation
 
 ```bash
-$ npm install koa-static
+$ npm install lb-koa-static
 ```
 
 ## API

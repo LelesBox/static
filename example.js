@@ -13,10 +13,15 @@ const app = koa();
 var url = '/build'
 app.use(serve('test/fixtures', {
     prefix: url,
-    suffix: ".html",
     //format:false
     defer: true
 }));
+
+app.use(serve('test/suffix', {
+    prefix: 'sf',
+    suffix: '.html'
+}));
+
 app.use(serve(__dirname + '/asset'));
 
 

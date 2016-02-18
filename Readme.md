@@ -53,7 +53,7 @@ app.use(serve('test/fixtures'));
 
 app.use(serve('test/fixtures',{prefix:'/build/'}));
 
-app.use(serve('test/fixtures',{prefix:'/build/',suffix:'.html'}));
+app.use(serve('test/fixtures',{prefix:'/sf/',suffix:'.html'}));
 
 // or use absolute paths
 app.use(serve(__dirname + '/test/fixtures'));

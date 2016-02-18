@@ -2,14 +2,7 @@
 
 基于koa-static,添加prefix和suffix选项,为链接添加前缀后缀
 
-[![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Dependency Status][david-image]][david-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
-
- Koa static file serving middleware, wrapper for [`koa-send`](https://github.com/koajs/send).
+Koa static file serving middleware, wrapper for [`koa-send`](https://github.com/koajs/send).
 
 ## Installation
 
@@ -72,20 +65,3 @@ console.log('listening on port 3000');
 ## License
 
   MIT
-
-[npm-image]: https://img.shields.io/npm/v/koa-static.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/koa-static
-[github-tag]: http://img.shields.io/github/tag/koajs/static.svg?style=flat-square
-[github-url]: https://github.com/koajs/static/tags
-[travis-image]: https://img.shields.io/travis/koajs/static.svg?style=flat-square
-[travis-url]: https://travis-ci.org/koajs/static
-[coveralls-image]: https://img.shields.io/coveralls/koajs/static.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/koajs/static?branch=master
-[david-image]: http://img.shields.io/david/koajs/static.svg?style=flat-square
-[david-url]: https://david-dm.org/koajs/static
-[license-image]: http://img.shields.io/npm/l/koa-static.svg?style=flat-square
-[license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/koa-static.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/koa-static
-[gittip-image]: https://img.shields.io/gittip/jonathanong.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/jonathanong/
